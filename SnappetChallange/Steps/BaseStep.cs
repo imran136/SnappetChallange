@@ -9,14 +9,14 @@ namespace SnappetChallange.Steps
         {
             public static IWebDriver Driver { get; private set; }
 
-            [BeforeScenario("UI")]
-            public static void BeforeScenario()
+            [BeforeFeature("UI")]
+            public static void BeforeFeature()
             {
                 PrepareEnvironment();
             }
 
-            [AfterScenario("UI")]
-            public static void AfterScenario()
+            [AfterFeature("UI")]
+            public static void AfterFeature()
             {
                 CloseTests();
             }
@@ -25,7 +25,6 @@ namespace SnappetChallange.Steps
             {
                 Driver = new ChromeDriver();
                 Driver.Manage().Window.Maximize();
-
             }
 
             public static void CloseTests()

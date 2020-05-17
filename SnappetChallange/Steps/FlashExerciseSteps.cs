@@ -45,7 +45,7 @@ namespace SnappetChallange.Steps
             flashExercisePage.CheckBox(checkBoxNumber).Click();
         }
 
-        [When(@"I press to check my result")]
+        [When(@"I press the result check button to check my result")]
         public void WhenIPressToCheckMyResult()
         {
             FlashExercisePage flashExercisePage = new FlashExercisePage(Driver);
@@ -58,6 +58,14 @@ namespace SnappetChallange.Steps
             FlashExercisePage flashExercisePage = new FlashExercisePage(Driver);
             Assert.That(flashExercisePage.ExerciseStatus().ToString(), Is.EqualTo(exerciseStatus));
         }
+
+        [Then(@"the exercise hint should be ""(.*)""")]
+        public void ThenTheExerciseHintShouldBe(string exerciseHint)
+        {
+            FlashExercisePage flashExercisePage = new FlashExercisePage(Driver);
+            Assert.That(flashExercisePage.ExerciseHint().ToString(), Is.EqualTo(exerciseHint));
+        }
+
 
     }
 }

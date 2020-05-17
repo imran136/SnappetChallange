@@ -51,6 +51,13 @@ namespace SnappetChallange.Pages
             return wait.Until(ExpectedConditions.ElementIsVisible(exerciseStatus)).Text;
         }
 
+        public String ExerciseHint()
+        {
+            By exerciseHint = By.Id("exercise_hint");
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            return wait.Until(ExpectedConditions.ElementIsVisible(exerciseHint)).Text;
+        }
+
         public IWebElement HitBox(string hitBoxType)
         {
             if (hitBoxType == "pink box")
